@@ -8,11 +8,6 @@
 ## Overview
 
 ### Currently supported Environments
-* S1 environment - uses "s1" on the *default* line on the *cucumber.yaml* file.
-    * Uses "test-plus.moen" and "s1-www.moen.com" websites.
-* D1 environment - uses "d1" on the *default* line on the *cucumber.yaml* file.
-    * Uses "dev-plus.moen" and "d1-www.moen.com" websites.
-
 *baseUrl - the configuration can be found in the cypress.config.js file: 
     * Use - https://storefront.dev.gscdigital.com.br/
 

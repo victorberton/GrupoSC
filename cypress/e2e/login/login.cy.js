@@ -59,3 +59,26 @@ Then ('o portal exibirá a seguinte mensagem de erro {string}', (errorMessageInc
 When ('digita sua Senha {string} incorretamente', (password) => {
   loginPage.fillPassword(password)
 })
+
+//Cenário 06: Esqueci minha senha
+When ('clica em Esqueceu sua senha?', () => {
+  loginPage.accessForgotPwdModal()
+})
+
+When ('a modal foi aberta e apresentou o texto {string}', (modalTitle) => {
+  loginPage.verifyModalText(modalTitle)
+})
+
+When ('o usuário digita seu Nome de usuário {string}', (username) => {
+  loginPage.fillUsernameFgtPwd(username)
+  cy.screenshotComData('forgotPwdPt1.png', ['login']);
+})
+
+When ('clica em Receber Código', () => {
+  loginPage.submit()
+})
+
+Then ('o portal deverá exibir a mensagem de confirmação {string}', (forgotPwdModalMessage) => {
+  loginPage. verifyFgtPwdConfirmation(forgotPwdModalMessage)
+  cy.screenshotComData('forgotPwdPt2.png', ['login']);
+})

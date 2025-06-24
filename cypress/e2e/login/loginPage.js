@@ -1,11 +1,23 @@
 class LoginPage {
 
+  accessForgotPwdModal() {
+    cy.get('.btn-link').click()
+  }
+
   verifyDescription(portalDescription){
     cy.contains(portalDescription).should('be.visible');
   }
 
    verifyErrorMessage(errorMessageIncorrectData){
     cy.contains(errorMessageIncorrectData, {timeout: 2000}).should('be.visible');
+  }
+
+  verifyModalText(modalTitle) {
+    cy.contains(modalTitle).should('be.visible');
+  }
+
+  verifyFgtPwdConfirmation(forgotPwdModalMessage){
+    cy.contains(forgotPwdModalMessage).should('be.visible');
   }
 
   verifyFields() {
@@ -31,8 +43,12 @@ class LoginPage {
     cy.get('#password').type(password);
   }
 
+  fillUsernameFgtPwd(username) {
+    cy.get('.form-control').eq(0).type(username)
+  }
+
   submit() {
-    cy.get('button[type="submit"]').click();
+    cy.get('button[type="submit"]').eq(0).click();
   }
 
   expectTerms() {

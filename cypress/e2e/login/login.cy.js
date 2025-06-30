@@ -4,6 +4,8 @@ import loginPage from './loginPage';
 /*Cenário 1: Acessar tela de login*/
 Given('que o usuário acessou a página de login', () => {
   cy.visit('/login');
+  cy.clearCookies()
+  cy.clearLocalStorage()
 });
 
 When ('a página é carregada', (username) => {
@@ -62,6 +64,8 @@ Then ('o portal exibirá a seguinte mensagem de erro {string}', (errorMessageInc
 //cenário 5: Login com Senha incorreta
 When ('digita sua Senha {string} incorretamente', (password) => {
   loginPage.fillPassword(password)
+  cy.log(`${password}`)
+  cy.wait(3000)
 })
 
 //Cenário 06: Esqueci minha senha

@@ -10,6 +10,7 @@ class LoginPage {
 
    verifyErrorMessage(errorMessageIncorrectData){
     cy.contains(errorMessageIncorrectData, {timeout: 2000}).should('be.visible');
+    cy.log(`Mensagem de erro exibida: ${errorMessageIncorrectData}`);
   }
 
   verifyModalText(modalTitle) {

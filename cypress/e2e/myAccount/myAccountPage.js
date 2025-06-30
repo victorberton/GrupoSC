@@ -30,13 +30,14 @@ class myAccountPage {
     });
 
     cy.destacar(rules.map(rule => `li:contains("${rule}")`).join(', '));
+    cy.screenshotComData('checarRegras', ['myAccount']);
   }
 
   verifyForgotPwd(forgotPassword){
     cy.contains(forgotPassword).should('be.visible');
     cy.destacar('.btn-link');
 
-  cy.screenshotComData('verificarCampos.png', ['login']);
+    cy.screenshotComData('verificarModalPwd.png', ['myAccount']);
   }
 
   submit() {

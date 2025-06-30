@@ -32,7 +32,7 @@ class LoginPage {
     cy.contains(forgotPassword).should('be.visible');
     cy.destacar('.btn-link');
 
-  cy.screenshotComData('verificarCampos.png', ['login']);
+  cy.screenshotComData('verificarCampos', ['login']);
   }
 
   fillUsername(username) {
@@ -51,13 +51,29 @@ class LoginPage {
     cy.get('button[type="submit"]').eq(0).click();
   }
 
+  expectMultipleSessionsModal() {
+    cy.wait(5000) // Aguarda 10 segundos para garantir que a página carregou completamente
+    cy.get('[data-page-id="login"]').then($body => {
+      if ($body.find('.session-modal').length > 0) {
+        // A modal apareceu
+        cy.get('.session-modal').should('be.visible');
+        cy.screenshotComData('sessionsModal', ['login']);
+        cy.get('[type="button"]').contains('Sim').click();
+      } else {
+        // A modal de múltiplas sessões não apareceu, teste segue em frente
+        cy.log('Modal de múltiplas sessões não apareceu, seguindo com o teste');
+      }
+    });
+  }
+
   expectTerms() {
+    cy.wait (5000)
     cy.get('[data-page-id="homepage"]').then($body => {
       if ($body.find('.dialog-terms').length > 0) {
         // A modal apareceu
         cy.get('.dialog-terms').should('be.visible');
         cy.get('#termsCheckbox').check();
-        cy.screenshotComData('modalChecarTermos.png', ['login']);
+        cy.screenshotComData('modalChecarTermos', ['login']);
         cy.get('button[type="submit"]').click();
       } else {
         // A modal de termos não apareceu, teste segue em frente
@@ -75,14 +91,13 @@ class LoginPage {
         cy.contains('div', 'Selecionar farmácia').first().click()
         cy.contains('div', 'Drogasil').first().click()
 
-        cy.screenshotComData('selectPharmacyModal.png', ['login']);
+        cy.screenshotComData('selectPharmacyModal', ['login']);
         cy.get('button[type="submit"]').first().click();
       } 
       else {
         // A modal de termos não apareceu, teste segue em frente
         //cy.log('Modal não apareceu, seguindo com o teste');
         cy.log('****************************************************** Modal não apareceu, seguindo com o teste ******************************************************');
-        cy.screenshotComData('selectPharmacyModalNotDisplayed.png', ['login']);
       }
     });
   }

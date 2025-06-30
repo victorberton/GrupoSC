@@ -7,7 +7,6 @@ Feature: Login de usuário
   Scenario: Usuário acessa página de login
     Then devo ver a mensagem "Faça login com a sua conta para acessar nosso Portal de Vendas!"
 
-
   Scenario: Validar composição da página de login
     Then devo ver a mensagem "Faça login com a sua conta para acessar nosso Portal de Vendas!"
     And o sistema deverá exibir os campos nome e senha
@@ -17,7 +16,8 @@ Feature: Login de usuário
     And o usuário digita seu Nome "victor.berton" com sucesso
     And digita sua Senha "NTTdata2025*@" com sucesso
     And clica no botão Entrar
-    Then o usuário será direcionado para a homepage e a modal com os termos de aceite deverá ser exibida
+    Then a modal de múltiplas sessões poderá ser exibida
+    And o usuário será direcionado para a homepage e a modal com os termos de aceite deverá ser exibida
     And a modal de farmácia deverá ser exibida caso seja o primeiro acesso
 
   Scenario: Erro ao realizar login, nome incorreto
@@ -26,7 +26,7 @@ Feature: Login de usuário
     And clica no botão Entrar
     Then o portal exibirá a seguinte mensagem de erro "Não foi possível fazer login. Para mais informações, ligue no 0000-0000 e informe o CÓDIGO 02."
 
-  Scenario: Erro ao realizar login, senha incorreto
+  Scenario: Erro ao realizar login, senha incorreta
     And o usuário digita seu Nome "victor.berton" com sucesso
     And digita sua Senha "NTTdata2025*@1" incorretamente
     And clica no botão Entrar

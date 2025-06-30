@@ -1,7 +1,23 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import loginPage from './myAccountPage';
+import myAccountPage from "./myAccountPage";
+
+Given('que o usuário realizou login', () => {
+  cy.login('victor.berton', 'NTTdata2025*@');
+});
 
 /*Cenário 1: Acessar tela de login*/
 When('abro o menu no cabeçalho e clico na opção Alterar senha', () => {
-  
+  myAccountPage.accessChangePwdPage();
+});
+
+Then ('o portal deverá apresentar uma modal com o título {string}', (modalTitle) => {
+  myAccountPage.verifyModalText(modalTitle);
+});
+
+Then ('deverá apresentar os campos {string}, {string} e {string}', (senhaAtual, novaSenha, confirmarSenha) => {
+  myAccountPage.verifyCPwdFields(senhaAtual, novaSenha, confirmarSenha);
+});
+
+Then ('apresentar as regras de senha {string}, {string}, {string}, {string}, {string} e {string}', (rule1, rule2, rule3, rule4, rule5, rule6) => {
+  myAccountPage.verifyRules(rule1, rule2, rule3, rule4, rule5, rule6);
 });

@@ -38,6 +38,10 @@ When ('clica no botão Entrar', () => {
   loginPage.submit()
 })
 
+Then ('a modal de múltiplas sessões poderá ser exibida', () => {
+  loginPage.expectMultipleSessionsModal()
+})
+
 Then ('o usuário será direcionado para a homepage e a modal com os termos de aceite deverá ser exibida', () => {
   loginPage.expectTerms()
 })

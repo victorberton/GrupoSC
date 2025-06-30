@@ -5,14 +5,23 @@ const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-pr
 
 module.exports = defineConfig({
   e2e: {
+    specPattern: "cypress/e2e/**/*.feature",
     async setupNodeEvents(on, config) {
-      await addCucumberPreprocessorPlugin(on, config);
-      on("file:preprocessor", createBundler({
-        plugins: [createEsbuildPlugin.default(config)],
-      }));
+      // Passa o stepDefinitions como terceiro parâmetro do plugin
+      await addCucumberPreprocessorPlugin(on, config, {
+        stepDefinitions: ["cypress/e2e/**/**/*.js"]
+      });
+
+      on(
+        "file:preprocessor",
+        createBundler({
+          plugins: [createEsbuildPlugin.default(config)],
+        })
+      );
+
       return config;
     },
-    specPattern: "cypress/e2e/**/*.feature",
+
     defaultCommandTimeout: 5000,
     viewportWidth: 1440,
     viewportHeight: 800,

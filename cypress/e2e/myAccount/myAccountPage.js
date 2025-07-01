@@ -5,7 +5,7 @@ class myAccountPage {
   }
 
   accessChangePwdPage() {
-    cy.contains('victor').trigger('mouseover');
+    cy.get('.box-menu').trigger('mouseover');
     cy.contains('Alterar senha').click({ force: true });
   }
 
@@ -18,15 +18,15 @@ class myAccountPage {
   }
 
   verifyCPwdFields() {
-    cy.get('[formControlName="oldPassword"]').should('be.visible');
-    cy.get('[formControlName="newPassword"]').should('be.visible');
-    cy.get('[formControlName="passwordConfirm"]').should('be.visible')
+    const fields = ['oldPassword', 'newPassword', 'passwordConfirm'];
+    fields.forEach(field => {
+      cy.get(`[formControlName="${field}"]`).should('be.visible');
+    });
   }
 
   verifyRules(table) {
     // transforma em array plano
     const rules = table.raw().flat();
-
     cy.log('Regras:', JSON.stringify(rules));
 
     cy.destacar(rules.map(rule => `li:contains("${rule}")`).join(', '));

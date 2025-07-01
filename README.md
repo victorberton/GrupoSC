@@ -25,18 +25,18 @@ Este projeto contém a automação de testes E2E utilizando o [Cypress](https://
 * @bahmutov/cypress-esbuild-preprocessor -> Necessário para compilar os arquivos .feature com esbuild
 * esbuild	-> Bundler rápido usado para transpilar os arquivos de teste
 
-## 1. Instale as dependências:
+## Instale as dependências:
 
-### NPM 
+#### NPM 
 npm install - npm install --save-dev cypress
 
-### Cucumber Preprocessor (para Gherkin)
+#### Cucumber Preprocessor (para Gherkin)
 npm install --save-dev @bahmutov/cypress-esbuild-preprocessor
 
-### Pré-processador esbuild
+#### Pré-processador esbuild
 npm install --save-dev @bahmutov/cypress-esbuild-preprocessor
 
-### Esbuild
+#### Esbuild
 npm install --save-dev esbuild
 #
 

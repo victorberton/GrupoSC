@@ -40,13 +40,14 @@ npm install --save-dev @bahmutov/cypress-esbuild-preprocessor
 npm install --save-dev esbuild
 #
 
-### Currently supported Environments
-* baseUrl - the configuration can be found in the cypress.config.js file: 
+### Ambientes utilizados
+* baseUrl - a configuração pode ser encontrada no arquivo cypress.config.js. 
 
-### Report files
-* Cypress automatically generates test reports when running in headless mode (cypress run). On failures, it captures screenshots and videos to help debug issues. These files are saved under cypress/screenshots/ and cypress/videos/. You can customize reports and configure folders and formats in cypress.config.js. This makes test evidence clear and easy to maintain.
-* We’ve customized the process to store screenshots in unique folders named with the current date, improving traceability
+### Relatórios
+* O Cypress gera relatórios de teste automaticamente quando executado no modo headless (cypress run). Em caso de falhas, ele captura capturas de tela e vídeos para ajudar a depurar problemas. Esses arquivos são salvos em cypress/screenshots/ e cypress/videos/. Você pode personalizar relatórios e configurar pastas e formatos em cypress.config.js. Isso torna as evidências dos testes claras e fáceis de manter..
+* Nós customizamos o processo de screenshots em um único diretório nomeado com a data atual, assim melhorando a rastreabilidade.
 
-### Scenarios
-Here's an overview of the scenarios covered by the automated tests.
-To edit the data for each scenario, just alter the example lines in its respective *.feature* file.
+### Cenários
+Aqui está um overview da cobertura de cenários dos testes automatizados
+Para editar os dados de cada cenário, basta alterar 
+To edit the data for each scenario, basta alterar as linhas de exemplo em seu respectivo arquivo *.feature.

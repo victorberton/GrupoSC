@@ -45,7 +45,7 @@ npm install --save-dev esbuild
 
 ### Relatórios
 * O Cypress gera relatórios de teste automaticamente quando executado no modo headless (cypress run). Em caso de falhas, ele captura capturas de tela e vídeos para ajudar a depurar problemas. Esses arquivos são salvos em cypress/screenshots/ e cypress/videos/. Você pode personalizar relatórios e configurar pastas e formatos em cypress.config.js. Isso torna as evidências dos testes claras e fáceis de manter..
-* Nós customizamos o processo de screenshots em um único diretório nomeado com a data atual, assim melhorando a rastreabilidade.
+* Nós customizamos o processo de screenshots em um único diretório nomeado com a data atual + suíte de teste, melhorando a rastreabilidade.
 
 ### Cenários
 Aqui está um overview da cobertura de cenários dos testes automatizados

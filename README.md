@@ -11,19 +11,19 @@ Este projeto contém a automação de testes E2E utilizando o [Cypress](https://
 
 ---
 ## 📋 Pré-requisitos
-*Node.js (v18+ recomendado)
-*npm install --save-dev \
-*cypress \
-*@badeball/cypress-cucumber-preprocessor \
-*@bahmutov/cypress-esbuild-preprocessor \
-*esbuild
+* Node.js (v18+ recomendado)
+* npm install --save-dev \
+* cypress \
+* @badeball/cypress-cucumber-preprocessor \
+* @bahmutov/cypress-esbuild-preprocessor \
+* esbuild
 
 ## 📦 O que cada uma faz:
 
-*cypress ->	Framework de testes end-to-end
-*@badeball/cypress-cucumber-preprocessor -> Suporte à escrita de testes em Gherkin (.feature)
-*@bahmutov/cypress-esbuild-preprocessor -> Necessário para compilar os arquivos .feature com esbuild
-*esbuild	-> Bundler rápido usado para transpilar os arquivos de teste
+* cypress ->	Framework de testes end-to-end
+* @badeball/cypress-cucumber-preprocessor -> Suporte à escrita de testes em Gherkin (.feature)
+* @bahmutov/cypress-esbuild-preprocessor -> Necessário para compilar os arquivos .feature com esbuild
+* esbuild	-> Bundler rápido usado para transpilar os arquivos de teste
 
 ## 1. Instale as dependências:
 
@@ -41,8 +41,7 @@ npm install --save-dev esbuild
 #
 
 ### Currently supported Environments
-*baseUrl - the configuration can be found in the cypress.config.js file: 
-    * Use - https://storefront.dev.gscdigital.com.br/
+* baseUrl - the configuration can be found in the cypress.config.js file: 
 
 ### Report files
 * Cypress automatically generates test reports when running in headless mode (cypress run). On failures, it captures screenshots and videos to help debug issues. These files are saved under cypress/screenshots/ and cypress/videos/. You can customize reports and configure folders and formats in cypress.config.js. This makes test evidence clear and easy to maintain.

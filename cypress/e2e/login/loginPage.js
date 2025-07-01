@@ -84,7 +84,7 @@ class LoginPage {
   }
 
   expectFirstAccess() {
-    cy.wait(10000)
+    cy.wait(5000)
     cy.get('[data-page-id="homepage"]').then($body => {
       //cy.get('.select-pharmacy-modal', { timeout: 10000 }).should('be.visible');
       if ($body.find('.select-pharmacy-modal__title').length) {

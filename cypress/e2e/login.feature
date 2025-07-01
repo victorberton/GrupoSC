@@ -25,7 +25,7 @@ Feature: Login de usuário
     And digita sua Senha "NTTdata2025*@" com sucesso
     And clica no botão Entrar
     Then o portal exibirá a seguinte mensagem de erro "Não foi possível fazer login. Para mais informações, ligue no 0000-0000 e informe o CÓDIGO 02."
-@focus 
+
   Scenario: Erro ao realizar login, senha incorreta
     And o usuário digita seu Nome "victor.berton" com sucesso
     And digita sua Senha "Teste*!123" incorretamente

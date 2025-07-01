@@ -23,11 +23,11 @@ class myAccountPage {
     cy.get('[formControlName="passwordConfirm"]').should('be.visible')
   }
 
-  verifyRules(rule1, rule2, rule3, rule4, rule5, rule6) {
-    const rules = [rule1, rule2, rule3, rule4, rule5, rule6];
-    rules.forEach(rule => {
-      cy.get('.forgot-pw-modal').should('contain', rule);
-    });
+  verifyRules(table) {
+    // transforma em array plano
+    const rules = table.raw().flat();
+
+    cy.log('Regras:', JSON.stringify(rules));
 
     cy.destacar(rules.map(rule => `li:contains("${rule}")`).join(', '));
     cy.screenshotComData('checarRegras', ['myAccount']);

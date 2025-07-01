@@ -18,6 +18,6 @@ Then ('deverá apresentar os campos {string}, {string} e {string}', (senhaAtual,
   myAccountPage.verifyCPwdFields(senhaAtual, novaSenha, confirmarSenha);
 });
 
-Then ('apresentar as regras de senha {string}, {string}, {string}, {string}, {string} e {string}', (rule1, rule2, rule3, rule4, rule5, rule6) => {
-  myAccountPage.verifyRules(rule1, rule2, rule3, rule4, rule5, rule6);
+Then ('apresentar as regras de senha:', (table) => {
+  myAccountPage.verifyRules(table);
 });

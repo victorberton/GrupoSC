@@ -34,7 +34,7 @@ Cypress.Commands.add('login', (username, password) => {
   cy.get('button[type="submit"]').click();
 
   cy.wait(5000) // Aguarda 5 segundos para garantir que a página carregou completamente
-  cy.get('[data-page-id="login"]').then($body => {
+  cy.get('[data-page-id="homepage"]').then($body => {
     if ($body.find('.session-modal').length > 0) {
 
       // A modal apareceu
@@ -59,7 +59,7 @@ Cypress.Commands.add('login', (username, password) => {
       }
     });
 
-    cy.wait(10000)
+    cy.wait(5000)
     cy.get('[data-page-id="homepage"]').then($body => {
       if ($body.find('.select-pharmacy-modal__title').length) {
 

@@ -53,7 +53,7 @@ class LoginPage {
   }
 
   expectMultipleSessionsModal() {
-    cy.wait(5000) // Aguarda 10 segundos para garantir que a página carregou completamente
+    cy.wait(5000) // Aguarda 5 segundos para garantir que a página carregou completamente
     cy.get('[data-page-id="login"]').then($body => {
       if ($body.find('.session-modal').length > 0) {
         // A modal apareceu
@@ -86,7 +86,6 @@ class LoginPage {
   expectFirstAccess() {
     cy.wait(5000)
     cy.get('[data-page-id="homepage"]').then($body => {
-      //cy.get('.select-pharmacy-modal', { timeout: 10000 }).should('be.visible');
       if ($body.find('.select-pharmacy-modal__title').length) {
       //selecione sua farmacia.
         cy.contains('div', 'Selecionar farmácia').first().click()
@@ -97,7 +96,6 @@ class LoginPage {
       } 
       else {
         // A modal de termos não apareceu, teste segue em frente
-        //cy.log('Modal não apareceu, seguindo com o teste');
         cy.log('****************************************************** Modal não apareceu, seguindo com o teste ******************************************************');
       }
     });

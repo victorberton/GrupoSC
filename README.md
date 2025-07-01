@@ -50,3 +50,5 @@ npm install --save-dev esbuild
 ### Cenários
 Aqui está um overview da cobertura de cenários dos testes automatizados
 Para editar os dados de cada cenário, basta alterar
+
+# ...
